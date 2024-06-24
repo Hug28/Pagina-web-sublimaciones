@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block contain %}
+
+
+
+
+<form action="/login" method="POST" class="form">
+    <div class="form-date">
+        {% with messages =get_flashed_messages() %}
+            {% if messages %}
+                {% for mesage in messages%}
+                    <p class="msj">{{mesage}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <div class="form-inputs">
+            <div class="form-input-name">
+                <label for="">Nombre:</label>
+                <input type="text" name="name">
+            </div>
+            <div class="form-input-password">
+                <label for="">Contraseña:</label>
+                <input type="password" name="password">
+            </div>
+        </div>
+        <button class="btn" type="submit">Ingresar</button>
+    </div>
+</form>
+
+
+{% endblock %}

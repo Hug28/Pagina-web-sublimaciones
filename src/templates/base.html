@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for("static",filename="style.css") }}">
+    <!--ICONOS-->
+    <link rel="icon" href="../static/img/portada face-1.png" type="image/png">
+    <title>{% block tiltle %}Productos{% endblock %}</title>
+</head>
+<body>
+    <header class="navegacion">
+            <a href="/home">
+                <div class="logo">
+                    <img class="logo-img" src="../static/img/portada face-1.png" alt="">
+                    <p class="logo-title">Haru Sublimaciones</p>
+                </div>
+            </a>
+            <nav class="enlaces" id="enlaces">
+                <a href="" id="enlace-nosotros">Nosotros</a>
+                <a href="">Contacto</a>
+                <a>{% block enlace %} {% endblock %}</a>
+            </nav>
+    </header>
+    <div class="opacity" id="opacity">
+    </div>
+    <section>
+        <div class=" show-card info-nosotros" id="info-nosotros">
+            <div class="icono-cerrar">
+                <i class="cerrar" id="cerrar-nosotros">X</i>
+            </div>
+            <h2 class="title-nosotros">Nosotros</h2>
+            <p class="separacion-texto"><span class="saludo">¡Hola a todos y bienvenidos!</span><br>
+                En nuestro emprendimiento ,nos apasiona la creacion de productos unicos y personalizados que reflejan
+                la individualidad y el estilo de cada uno de ustedes.Somos un equipo dedicado a convertir tus ideas en realidad,
+                llevando tus diseños favoritos a prendas de vestir ,tazas ,almohadones,stikers a prueba de agua ,
+                placas de animales y mas...
+            </p>
+        </div>
+        <div class=" show-card info-contacto" id="info-contacto">
+            <div class="icono-cerrar">
+                <i class="cerrar" id="cerrar-contacto">X</i>
+            </div>
+            <h2 class="title-nosotros ">Contacto</h2>
+            <p class="separacion-texto">
+                
+                <a href="https://www.instagram.com/haru.sublima/" target="_blank">
+                    <img src="../static/img/instagram.png" width="20px" height="20px" alt=""> haru.sublima<br>
+                </a>
+                <a href=" https://wa.me/3518121865?text=hola que tal" target="_blank">
+                <img src="../static/img/whatsapp.png" width="20px" height="20px" alt=""> 3518121865
+                </a>
+            </p>
+        </div>
+    </section>
+    <section class="container" id="container">
+    {% block contain %}
+
+    {% endblock %}
+    </section>
+    <script src="../static/app.js"></script>
+</body>
+</html>

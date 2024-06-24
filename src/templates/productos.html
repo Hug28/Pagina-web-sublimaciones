@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block contain %}
+
+    
+    {% with img= '../static/asset/img/' %}
+        <div class="contain-productos">
+            {% for producto in resu %}
+            <div class="productos">
+                <a href="{{img}}{{producto[1]}}">
+                    <img class="img-productos" src="{{img}}{{producto[1]}}"  alt="img-product">
+                </a>  
+            </div>
+            {% endfor %}
+        </div>
+    {% endwith %}
+    
+{% endblock%}

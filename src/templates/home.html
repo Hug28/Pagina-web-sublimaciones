@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} PRODUCTOS {% endblock%}
+
+{% block contain%} 
+    <div class="container_card">
+        <h1 class="title">Bienvendios a nuestro catalago de Productos</h1>
+        <div class="cards" id="cards">
+            <a href="{{ url_for('seccion',seccion_name='tazas') }}">
+                <div class="card card-tazas">
+                    <p class="card-title">Tazas</p>
+                </div>
+            </a>
+            <a href=" {{url_for('seccion',seccion_name='Stikers') }}">
+                <div class="card card-stikers">
+                    <p class="card-title">Stikers</p>
+                </div>
+            </a>
+            <a href="{{ url_for('seccion',seccion_name='placas')}}">
+                <div class="card card-mascotas">
+                    <p class="card-title">Placa de mascotas</p>
+                </div>
+            </a>
+            <a href="{{ url_for('seccion',seccion_name='almohadones') }}">
+                <div class="card card-almohadones">
+                    <p class="card-title">Almohadones</p>
+                </div>
+            </a>  
+        </div>
+    </div>
+{% endblock%}

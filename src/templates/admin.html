@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block contain %}
+
+   
+<div class="form-admin">
+    <div class="contain-admin">
+        <h1>Agregar producto</h1>
+        <form action="/agregar" method="POST" class="form-info" enctype="multipart/form-data">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <div class="info-admin">
+                <div>
+                    <label for="">imagen</label>
+                    <input type="file" name="img" required>
+                </div>
+            </div>
+            <div class="option-admin" >
+                <p>Categoria:</p>
+                <div class="categoria">
+                    <input type="radio" name="producto" value="tazas" required>
+                    <label >Tazas</label><br>
+                </div>
+                <div class="categoria">
+                    <input type="radio" name="producto" value="stikers">
+                    <label >Stikers</label><br>
+                </div>
+                <div class="categoria">
+                    <input type="radio" name="producto" value="placas">
+                    <label >Placas de mascotas</label>
+                </div>
+                <div class="categoria">
+                    <input type="radio" name="producto" value="almohadones">
+                    <label for="">Almohadones</label>
+                </div>
+            </div>
+            <div>
+                <input class="btn" type="submit" value="Agregar">
+            </div> 
+        </form>
+        <div class="salir">
+            <a href="{{ url_for('logout')}}">Salir</a>
+        </div>
+        
+    </div>
+</div>
+    
+{% endblock%}
