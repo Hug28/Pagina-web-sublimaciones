@@ -40,8 +40,7 @@ def home():
 def seccion(seccion_name):
     opcion=seccion_name.lower()
     resu=Metodos.select(db,opcion)
-    print(resu)
-    print(opcion)
+    
     if(resu is not None):
         return render_template("productos.html",resu=resu)
     return render_template("productos.html",msj="error")
@@ -102,7 +101,6 @@ def nombre_de_img(img,dato):
     filename=secure_filename(img.filename)
     id=str(uuid.uuid4())
     name=dato+id+filename
-    print(name)
     upload_path=os.path.join(basepath,'static/asset/img',name)
     img.save(upload_path)
     return name
@@ -121,4 +119,4 @@ if __name__=='__main__':
     csrf.init_app(app)
     app.register_error_handler(401,status_401)
     app.register_error_handler(404,status_404)
-    app.run(debug=True, port=3000)
+    app.run(debug=True)
