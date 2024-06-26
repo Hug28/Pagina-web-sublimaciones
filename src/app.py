@@ -1,14 +1,14 @@
 from flask import Flask,redirect,render_template,url_for,jsonify,request,flash
 from flask_login import LoginManager,login_required,logout_user,login_user
 from flask_wtf.csrf import CSRFProtect
-from .db.db import get_conn
+from db.db import get_conn
 from werkzeug.utils import secure_filename
 import os
 import uuid 
 
-from .models.ModelUser import ModelUser
-from .models.User import User
-from .models.Metodos import Metodos
+from models.ModelUser import ModelUser
+from models.User import User
+from models.Metodos import Metodos
 
 
 app=Flask(__name__)
