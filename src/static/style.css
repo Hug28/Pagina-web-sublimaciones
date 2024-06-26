@@ -36,7 +36,7 @@ a {
 }
 .enlaces a{
     color: white;
-    font-size: 15px;
+    font-size: 18px;
     text-decoration: none;
     margin:0px 10px;
 }
@@ -52,7 +52,7 @@ a {
         gap: 20px;
     }
     .enlaces a{
-        font-size: 20px;
+        font-size: 25px;
     }
     .logo-title{
         display: none;
@@ -110,9 +110,14 @@ a {
     cursor: pointer;
     transition: transform 0.2s ease;
 }
+
 .card:hover{
     transform: scale(1.1);
-
+}
+@media (width: 678px){
+    .card:hover{
+        transform: none;
+    }
 }
 .card-tazas{
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./img/WhatsApp\ Image\ 2024-06-09\ at\ 19.42.18.jpeg);
@@ -182,7 +187,8 @@ a {
 }
 .title-nosotros{
     text-align: center;
-    margin: 10px;    
+    margin: 10px;
+       
 }
 .separacion-texto{
     line-height: 30px;
