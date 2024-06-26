@@ -6,9 +6,9 @@ from werkzeug.utils import secure_filename
 import os
 import uuid 
 
-from models.ModelUser import ModelUser
-from models.User import User
-from models.Metodos import Metodos
+from .models.ModelUser import ModelUser
+from .models.User import User
+from .models.Metodos import Metodos
 
 
 app=Flask(__name__)
