@@ -4,13 +4,14 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-database=os.getenv("DATA_BASE")
-user=os.getenv("USER")
-password=os.getenv("PASSWORD")
+
+database_url=os.getenv("DATABASE_URL")
 
 def get_conn():
       try:
-            conn = psycopg2.connect(database=database, user=user, password=password)
+            conn = psycopg2.connect(database_url)
             return conn
       except Exception as e:
             print("error",e)
+
+
