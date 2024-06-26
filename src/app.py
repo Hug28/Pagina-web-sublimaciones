@@ -15,7 +15,7 @@ app=Flask(__name__)
 app.secret_key=os.environ.get("SECRET_KEY")
 
 
-csrf=CSRFProtect()
+csrf=CSRFProtect(app)
 db=get_conn()
 login_manager=LoginManager(app)
 
