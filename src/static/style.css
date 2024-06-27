@@ -115,6 +115,9 @@ a {
     transform: scale(1.1);
 }
 @media (width: 678px){
+    .card{
+        transition: none;
+    }
     .card:hover{
         transform: none;
     }
