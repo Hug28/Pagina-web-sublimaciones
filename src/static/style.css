@@ -114,7 +114,7 @@ a {
 .card:hover{
     transform: scale(1.1);
 }
-@media (width: 678px){
+@media (max-width: 678px){
     .card{
         transition: none;
     }
