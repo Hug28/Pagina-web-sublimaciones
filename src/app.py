@@ -14,6 +14,10 @@ from .models.Metodos import Metodos
 app=Flask(__name__)
 app.secret_key=os.environ.get("SECRET_KEY")
 
+UPLOAD_FOLDER = 'static/asset/img'
+app.config['UPLOADED_PHOTOS_DEST'] = UPLOAD_FOLDER
+
+
 
 csrf=CSRFProtect(app)
 db=get_conn()
@@ -83,7 +87,7 @@ def logout():
 
 
 #Agregar producto
-@app.route("/agregar",methods=["GE","POST"])
+@app.route("/agregar",methods=["GET","POST"])
 def agregar():
     if request.method=="POST":
         categoria=request.form["producto"]
@@ -101,7 +105,7 @@ def nombre_de_img(img,dato):
     filename=secure_filename(img.filename)
     id=str(uuid.uuid4())
     name=dato+id+filename
-    upload_path=os.path.join(basepath,'static/asset/img',name)
+    upload_path=os.path.join(basepath,app.config['UPLOADED_PHOTOS_DEST'],name)
     img.save(upload_path)
     return name
 
