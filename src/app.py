@@ -15,7 +15,7 @@ app=Flask(__name__)
 app.secret_key=os.environ.get("SECRET_KEY")
 
 UPLOAD_FOLDER = 'static/asset/img'
-app.config['UPLOADED_PHOTOS_DEST'] = UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 
@@ -105,7 +105,7 @@ def nombre_de_img(img,dato):
     filename=secure_filename(img.filename)
     id=str(uuid.uuid4())
     name=dato+id+filename
-    upload_path=os.path.join(basepath,app.config['UPLOADED_PHOTOS_DEST'],name)
+    upload_path=os.path.join(basepath,app.config['UPLOAD_FOLDER'],name)
     img.save(upload_path)
     return name
 
